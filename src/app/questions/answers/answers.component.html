@@ -1,0 +1,20 @@
+<h4>Answers component</h4>
+
+<div class="row">
+  <button (click)="firstModal.open()">
+    modal with custom header content and footer
+  </button>
+  <route-modal #firstModal>
+    <modal-header>
+      <h1>I am first modal</h1>
+    </modal-header>
+    <modal-content>
+      This modal has its own header, content and footer.
+    </modal-content>
+    <modal-footer>
+      <button class="btn btn-primary" (click)="firstModal.close()">
+        okay!
+      </button>
+    </modal-footer>
+  </route-modal>
+</div>
