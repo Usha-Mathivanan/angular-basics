@@ -8,22 +8,25 @@ import { AppComponent } from './app.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { AuthService } from './auth/auth.service';
-import { ModalModule } from 'ngx-modal';
+// import { ModalModule } from 'ngx-modal';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { SampleModalComponent } from './sample-modal/sample-modal.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SampleModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ModalModule
+    ModalModule.forRoot()
   ],
-  providers: [CommonService,
-    BsModalService,
-    BsModalRef,
+  providers: [
+    CommonService,
     AuthService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [SampleModalComponent]
 })
 export class AppModule { }

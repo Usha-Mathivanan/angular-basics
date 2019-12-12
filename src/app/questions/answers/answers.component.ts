@@ -3,7 +3,7 @@ import { CommonService } from '../../services/common.service';
 import { slideInAnimation } from 'src/app/animation';
 
 @Component({
-    selector: 'answers',
+    selector: 'app-answers',
     templateUrl: './answers.component.html',
     styleUrls: ['./answers.component.scss'],
     animations: [slideInAnimation]

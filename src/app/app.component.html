@@ -2,22 +2,12 @@
   Angular basics
 </button>
 <h5>Common services</h5>
+<div>
+  <button (click)="openModal()">Open modal</button>
+</div>
 <a routerLink="/questions" routerLinkActive="active">Click to activate</a>
 <a routerLink="questions/answers" routerLinkActive="active"
   >Click to go to answers
 </a>
-<!-- <app-questions></!-->
--->
+  
 <router-outlet></router-outlet>
-<button (click)="myModal.open()">open my modal</button>
-<modal class="modal-class" #myModal>
-    <modal-header>
-        <h1>Modal header</h1>
-    </modal-header>
-    <modal-content>
-        Hello Modal!
-    </modal-content>
-    <modal-footer>
-      <button class="btn btn-primary" (click)="myModal.close()">&times;</button>
-    </modal-footer>
-</modal>

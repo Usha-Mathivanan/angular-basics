@@ -3,6 +3,7 @@ import { CommonService } from './services/common.service';
 import { Router } from '@angular/router';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { AuthService } from './auth/auth.service';
+import { SampleModalComponent } from './sample-modal/sample-modal.component';
 
 
 @Component({
@@ -13,11 +14,13 @@ import { AuthService } from './auth/auth.service';
 export class AppComponent implements OnInit {
   // modalRef: BsModalRef;
   title = 'basics';
+  modalRef: BsModalRef;
 
   constructor(
     public commonService: CommonService,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private modalService: BsModalService
   ) {
   }
 
@@ -27,9 +30,14 @@ export class AppComponent implements OnInit {
     console.log('isLogin -app comp', this.authService.isLogIn);
   }
 
-  // openModal(template: TemplateRef<any>) {
-  //   this.modalRef = this.modalService.show(template);
-  // }
+  openModal() {
+    this.modalRef = this.modalService.show(SampleModalComponent, {
+      initialState: {
+        title: 'Sample Modal',
+        data: {}
+      }
+    });
+  }
 
   goToQuestions() {
     this.router.navigate(['/questions']);
